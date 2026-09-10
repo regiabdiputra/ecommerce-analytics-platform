@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-08-31T00:11:36.321977",
+  "summary": {
+    "order_volume": {
+      "flagged_periods": 1,
+      "severity_counts": {
+        "Normal": 23,
+        "Critical": 1
+      }
+    },
+    "cancellation_rate": {
+      "flagged_periods": 1,
+      "severity_counts": {
+        "Normal": 23,
+        "Watch": 1
+      }
+    },
+    "shipping_cost": {
+      "flagged_periods": 3,
+      "severity_counts": {
+        "Normal": 21,
+        "Warning": 3
+      }
+    },
+    "avg_payment": {
+      "flagged_periods": 2,
+      "severity_counts": {
+        "Normal": 22,
+        "Watch": 2
+      }
+    },
+    "province_cancellation": {
+      "flagged_periods": 5,
+      "severity_counts": {
+        "Normal": 29,
+        "Watch": 3,
+        "Warning": 2
+      }
+    }
+  }
+}

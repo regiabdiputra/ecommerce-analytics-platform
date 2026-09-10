@@ -1,0 +1,54 @@
+{
+  "generated_at": "2026-08-31T00:11:36.640515",
+  "total_recommendations": 5,
+  "high_priority": 1,
+  "medium_priority": 3,
+  "low_priority": 1,
+  "recommendations": [
+    {
+      "title": "Address Elevated Cancellation Rate in SULAWESI TENGAH",
+      "observation": "SULAWESI TENGAH has a cancellation rate of 30.4% — significantly above the national average of 13.6%.",
+      "evidence": "9 provinces have cancellation rates ≥ 1.5x the national average. SULAWESI TENGAH: 56 orders, 30.4% cancellation. National avg: 13.6%.",
+      "implication": "High cancellation provinces waste shipping costs and operational resources. Root causes may include: high COD proportion, logistics reliability issues, or buyer-initiated order changes.",
+      "action": "(1) Investigate cancellation reason breakdown specifically in SULAWESI TENGAH. (2) Compare COD vs digital payment cancel rates within SULAWESI TENGAH. (3) Review courier performance and delivery success rates in the region. Note: causal factors require operational investigation.",
+      "priority": "High",
+      "category": "Operations"
+    },
+    {
+      "title": "Diversify Geographic Revenue Base",
+      "observation": "80.2% of all orders originate from Java, Bali, and Banten.",
+      "evidence": "Top province JAWA BARAT alone contributes 32.0% of orders. Top 3 provinces = 63.2% of total. Outside Java-Bali: 19.8% of orders.",
+      "implication": "High geographic concentration creates vulnerability — any disruption (logistics, competition, regional events) in Jawa Barat or Banten would materially impact overall business performance.",
+      "action": "(1) Identify high-potential provinces outside Java with low cancellation rates. (2) Target emerging markets (provinces showing volume growth but low penetration). (3) Evaluate whether shipping costs to outer provinces are competitively subsidized.",
+      "priority": "Medium",
+      "category": "Geography"
+    },
+    {
+      "title": "Assess Shipping Subsidy Sustainability",
+      "observation": "69.8% of orders had zero buyer shipping cost. Platform subsidizes 68.9% of shipping costs on average.",
+      "evidence": "Median buyer shipping payment = Rp 0 (free shipping). Median estimated platform subsidy = Rp 9,500 per order. Total orders: 20,848.",
+      "implication": "Heavy shipping subsidies support order volume but represent a significant platform cost. As volume grows, subsidy cost scales proportionally. Business sustainability depends on whether subsidy is offset by GMV growth.",
+      "action": "(1) Monitor subsidy cost trend monthly. (2) Identify order segments where buyers can absorb partial shipping cost. (3) Evaluate whether heavier orders (high weight_kg) receive disproportionate subsidy.",
+      "priority": "Medium",
+      "category": "Commercial"
+    },
+    {
+      "title": "Capitalize on Positive Growth Momentum",
+      "observation": "Order volume shows positive growth: +49.2% in recent 3 months vs prior 3 months.",
+      "evidence": "Recent 3-month avg: 1156 orders/month. Prior 3-month avg: 774 orders/month.",
+      "implication": "Positive trend provides opportunity to consolidate gains through operational readiness and targeted expansion.",
+      "action": "(1) Ensure logistics and fulfillment capacity matches growing order volume. (2) Identify which categories/regions are driving growth for targeted investment. (3) Monitor cancellation rate — ensure growth doesn't increase operational strain.",
+      "priority": "Medium",
+      "category": "Sales"
+    },
+    {
+      "title": "Evaluate Discount Strategy Effectiveness",
+      "observation": "Only 0.6% of orders have any discount applied.",
+      "evidence": "99.4% of orders have Total Diskon = 0. Discount analysis shows minimal commercial discount activity in the dataset.",
+      "implication": "Either discount programs are not being utilized, or buyers are purchasing at full price. This limits the ability to use price promotions as a growth lever. Subsidy may be delivered through shipping (not product discount).",
+      "action": "(1) Clarify whether product discounts are tracked separately from shipping subsidies. (2) If discount programs exist, investigate why uptake is low. (3) Consider targeted discount campaigns for high-cancellation segments to improve conversion.",
+      "priority": "Low",
+      "category": "Commercial"
+    }
+  ]
+}

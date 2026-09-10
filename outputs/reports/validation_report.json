@@ -1,0 +1,97 @@
+{
+  "timestamp": "2026-08-31T00:11:08.199203",
+  "total_rows": 20848,
+  "total_columns": 19,
+  "checks": {
+    "schema_columns": {
+      "status": "PASS",
+      "detail": "All 19 expected columns present",
+      "affected_rows": 0
+    },
+    "primary_key": {
+      "status": "PASS",
+      "detail": "order_id is 100% unique, 0 nulls",
+      "affected_rows": 0
+    },
+    "full_row_duplicates": {
+      "status": "PASS",
+      "detail": "Full-row duplicates: 0",
+      "affected_rows": 0
+    },
+    "missing_alasan_pembatalan": {
+      "status": "PASS",
+      "detail": "Cancelled orders missing reason: 0/2830. Non-cancelled missing: expected (86.4% is correct).",
+      "affected_rows": 0
+    },
+    "missing_timestamps": {
+      "status": "WARN",
+      "detail": "Waktu Pesanan Dibuat missing: 1,980 (9.5%). Recoverable via source_file column.",
+      "affected_rows": 1980
+    },
+    "missing_other_columns": {
+      "status": "PASS",
+      "detail": "All non-nullable columns have 0 missing values",
+      "affected_rows": 0
+    },
+    "numeric_types": {
+      "status": "PASS",
+      "detail": "All 9 numeric columns have correct types",
+      "affected_rows": 0
+    },
+    "negative_values": {
+      "status": "PASS",
+      "detail": "No negative values in any numeric column",
+      "affected_rows": 0
+    },
+    "zero_quantity": {
+      "status": "PASS",
+      "detail": "Orders with total_qty=0: 0",
+      "affected_rows": 0
+    },
+    "cancelled_with_payment": {
+      "status": "PASS",
+      "detail": "Cancelled orders with Total Pembayaran > 0: 0",
+      "affected_rows": 0
+    },
+    "completed_zero_payment": {
+      "status": "WARN",
+      "detail": "Completed orders with Total Pembayaran=0: 62 (likely full voucher/promo coverage — valid)",
+      "affected_rows": 62
+    },
+    "date_range": {
+      "status": "PASS",
+      "detail": "All timestamps within valid range: 2023-12-01 00:33:00 → 2025-11-30 23:17:00",
+      "affected_rows": 0
+    },
+    "status_consistency": {
+      "status": "PASS",
+      "detail": "Status Pesanan: 11 unique values. 7 are long-form return-window variants (expected for Nov 2025)",
+      "affected_rows": 0
+    },
+    "geography_completeness": {
+      "status": "PASS",
+      "detail": "Provinces: 34 unique, 0 null. Cities: 424 unique, 0 null.",
+      "affected_rows": 0
+    },
+    "shipping_cost_logic": {
+      "status": "PASS",
+      "detail": "Orders where buyer paid more than estimated full shipping: 0",
+      "affected_rows": 0
+    },
+    "source_file_count": {
+      "status": "PASS",
+      "detail": "Source files: 24 (expected 24)",
+      "affected_rows": 0
+    },
+    "extreme_outliers": {
+      "status": "WARN",
+      "detail": "Extreme values detected (require investigation): {'total_qty': {'threshold': 100, 'count': 30}, 'total_weight_gr': {'threshold': 100000, 'count': 19}, 'Total Pembayaran': {'threshold': 2000000, 'count': 23}, 'Perkiraan Ongkos Kirim': {'threshold': 200000, 'count': 47}}",
+      "affected_rows": 119
+    }
+  },
+  "summary": {
+    "passed": 14,
+    "warnings": 3,
+    "failed": 0
+  }
+}

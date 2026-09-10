@@ -1,0 +1,16 @@
+{
+  "total_orders": 20848,
+  "completed": 17929,
+  "cancelled": 2830,
+  "in_transit": 59,
+  "completion_rate_pct": 86.0,
+  "cancellation_rate_pct": 13.57,
+  "free_shipping_pct": 69.8,
+  "avg_platform_subsidy_pct": 68.91,
+  "bulk_orders": 674,
+  "bulk_order_pct": 3.23,
+  "returned_orders": 157,
+  "return_rate_pct": 0.7531,
+  "delivery_sla_available": false,
+  "delivery_sla_note": "Delivery timestamp not available in dataset — SLA analysis not possible."
+}

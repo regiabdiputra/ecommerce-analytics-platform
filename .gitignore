@@ -1,0 +1,52 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.Python
+env/
+venv/
+.venv/
+pip-wheel-metadata/
+
+# Raw & staging data — too large for git
+data/raw/
+data/staging/*.parquet
+data/processed/*.parquet
+
+# Keep marts & reports so dashboard runs without pipeline
+# data/marts/  <-- intentionally NOT excluded
+# outputs/reports/  <-- intentionally NOT excluded
+
+# Large figure outputs
+outputs/figures/*.png
+outputs/figures/*.html
+outputs/forecasts/*.json
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Temp/archive files
+*.tmp
+~$*
+*.zip

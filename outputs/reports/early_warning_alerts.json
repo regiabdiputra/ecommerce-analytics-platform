@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-08-31T00:11:36.541011",
+  "summary": {
+    "total_alerts": 4,
+    "critical": 1,
+    "warning": 3,
+    "watch": 0
+  },
+  "alerts": [
+    {
+      "metric": "province_cancellation_rate",
+      "current_value": 30.36,
+      "baseline_value": 18.58,
+      "deviation_pct": 63.36,
+      "severity": "Critical",
+      "affected": "SULAWESI TENGAH",
+      "description": "SULAWESI TENGAH: cancellation rate 30.4% (national avg: 18.6%, 56 orders).",
+      "recommendation": "Investigate cancellation drivers in SULAWESI TENGAH. Check if COD proportion is high, logistics reliability, or buyer quality issues. Requires operational investigation.",
+      "timestamp": "2026-08-31T00:11:36.539997"
+    },
+    {
+      "metric": "cancellation_rate",
+      "current_value": 8.93,
+      "baseline_value": 14.42,
+      "deviation_pct": -38.06,
+      "severity": "Warning",
+      "affected": "All orders — 2025-11",
+      "description": "Cancellation rate in 2025-11 is 8.9% vs baseline 14.4%.",
+      "recommendation": "Investigate recent cancellation reasons. Check if COD-related or system-related cancellations increased. Review operational processes.",
+      "timestamp": "2026-08-31T00:11:36.339027"
+    },
+    {
+      "metric": "province_cancellation_rate",
+      "current_value": 27.82,
+      "baseline_value": 18.58,
+      "deviation_pct": 49.7,
+      "severity": "Warning",
+      "affected": "KALIMANTAN TIMUR",
+      "description": "KALIMANTAN TIMUR: cancellation rate 27.8% (national avg: 18.6%, 133 orders).",
+      "recommendation": "Investigate cancellation drivers in KALIMANTAN TIMUR. Check if COD proportion is high, logistics reliability, or buyer quality issues. Requires operational investigation.",
+      "timestamp": "2026-08-31T00:11:36.539997"
+    },
+    {
+      "metric": "province_cancellation_rate",
+      "current_value": 27.62,
+      "baseline_value": 18.58,
+      "deviation_pct": 48.62,
+      "severity": "Warning",
+      "affected": "NUSA TENGGARA BARAT (NTB)",
+      "description": "NUSA TENGGARA BARAT (NTB): cancellation rate 27.6% (national avg: 18.6%, 105 orders).",
+      "recommendation": "Investigate cancellation drivers in NUSA TENGGARA BARAT (NTB). Check if COD proportion is high, logistics reliability, or buyer quality issues. Requires operational investigation.",
+      "timestamp": "2026-08-31T00:11:36.539997"
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+﻿2026-08-31 00:11:07,433 [INFO] 
+============================================================
+2026-08-31 00:11:07,433 [INFO]   INTELLIGENT SALES & OPERATIONS ANALYTICS PLATFORM
+2026-08-31 00:11:07,433 [INFO]   Pipeline Execution Start
+2026-08-31 00:11:07,433 [INFO] ============================================================
+2026-08-31 00:11:07,433 [INFO] 
+============================================================
+2026-08-31 00:11:07,433 [INFO]   STEP: 1. Ingestion ΓÇö Load Raw Data
+2026-08-31 00:11:07,433 [INFO] ============================================================
+2026-08-31 00:11:08,074 [INFO] Loading raw data from: C:\Users\regicuco\PORTO PROJECT ANALYTICS ENGINEER\PROJECT 1\data\raw\all_months_clean.csv
+2026-08-31 00:11:08,183 [INFO] Loaded 20,848 rows x 19 columns
+2026-08-31 00:11:08,183 [INFO]   Rows: 20,848 | Columns: 19
+2026-08-31 00:11:08,183 [INFO]   [DONE] 1. Ingestion ΓÇö Load Raw Data completed in 0.7s
+2026-08-31 00:11:08,183 [INFO] 
+============================================================
+2026-08-31 00:11:08,183 [INFO]   STEP: 2. Validation ΓÇö Data Quality Checks
+2026-08-31 00:11:08,183 [INFO] ============================================================
+2026-08-31 00:11:08,229 [INFO] Validation complete: 14 PASS, 3 WARN, 0 FAIL
+
+=================================================================
+  DATA VALIDATION REPORT
+=================================================================
+  Timestamp : 2026-08-31T00:11:08.199203
+  Rows      : 20,848
+  Columns   : 19
+  Result    : 14 PASS | 3 WARN | 0 FAIL
+-----------------------------------------------------------------
+  [OK] schema_columns                           PASS
+  [OK] primary_key                              PASS
+  [OK] full_row_duplicates                      PASS
+  [OK] missing_alasan_pembatalan                PASS
+  [! ] missing_timestamps                       WARN [1,980 rows]
+       ΓåÆ Waktu Pesanan Dibuat missing: 1,980 (9.5%). Recoverable via source_file column.
+  [OK] missing_other_columns                    PASS
+  [OK] numeric_types                            PASS
+  [OK] negative_values                          PASS
+  [OK] zero_quantity                            PASS
+  [OK] cancelled_with_payment                   PASS
+  [! ] completed_zero_payment                   WARN [62 rows]
+       ΓåÆ Completed orders with Total Pembayaran=0: 62 (likely full voucher/promo coverage ΓÇö valid)
+  [OK] date_range                               PASS
+  [OK] status_consistency                       PASS
+  [OK] geography_completeness                   PASS
+  [OK] shipping_cost_logic                      PASS
+  [OK] source_file_count                        PASS
+  [! ] extreme_outliers                         WARN [119 rows]
+       ΓåÆ Extreme values detected (require investigation): {'total_qty': {'threshold': 100, 'count': 30}, 'total_weight_gr': {'threshold': 100000, 'count': 19}, 'Total Pembayaran': {'threshold': 2000000, 'count': 23}, 'Perkiraan Ongkos Kirim': {'threshold': 200000, 'count': 47}}
+=================================================================
+2026-08-31 00:11:08,229 [INFO] Validation report saved: C:\Users\regicuco\PORTO PROJECT ANALYTICS ENGINEER\PROJECT 1\outputs\reports\validation_report.json
+2026-08-31 00:11:08,245 [INFO]   [DONE] 2. Validation ΓÇö Data Quality Checks completed in 0.1s
+2026-08-31 00:11:08,245 [INFO] 
+============================================================
+2026-08-31 00:11:08,245 [INFO]   STEP: 3. Staging ΓÇö Normalize and Clean
+2026-08-31 00:11:08,245 [INFO] ============================================================
+2026-08-31 00:11:08,247 [INFO] Starting staging pipeline...
+2026-08-31 00:11:08,247 [INFO]   Parsing timestamps...
+2026-08-31 00:11:08,247 [INFO]   Recovering missing timestamps from source_file...
+2026-08-31 00:11:08,387 [INFO]   Recovered 1,980 month labels from source_file
+2026-08-31 00:11:08,387 [INFO]   Normalizing order status...
+2026-08-31 00:11:08,403 [INFO]   Parsing cancellation reasons...
+2026-08-31 00:11:08,464 [INFO]   Parsing shipping options...
+2026-08-31 00:11:08,557 [INFO]   Standardizing province names...
+2026-08-31 00:11:08,573 [INFO] Staging complete: 20,848 rows, 31 columns
+2026-08-31 00:11:08,656 [INFO] Staging data saved: C:\Users\regicuco\PORTO PROJECT ANALYTICS ENGINEER\PROJECT 1\data\staging\stg_orders.parquet (803.1 KB)
+2026-08-31 00:11:08,656 [INFO]   [DONE] 3. Staging ΓÇö Normalize and Clean completed in 0.4s
+2026-08-31 00:11:08,656 [INFO] 
+============================================================
+2026-08-31 00:11:08,656 [INFO]   STEP: 4. Transformation ΓÇö Feature Engineering
+2026-08-31 00:11:08,656 [INFO] ============================================================
+2026-08-31 00:11:08,658 [INFO] Building analytical features...
+2026-08-31 00:11:08,661 [INFO]   Deriving time features...
+2026-08-31 00:11:08,682 [INFO]   Deriving binary flags...
+2026-08-31 00:11:08,698 [INFO]   Deriving ratios and monetary metrics...
+2026-08-31 00:11:08,730 [INFO] Feature engineering complete: 61 columns total
+2026-08-31 00:11:08,730 [INFO] Building category-exploded view...
+2026-08-31 00:11:08,775 [INFO] Category-exploded: 23,185 rows (from 20,848 orders)
+2026-08-31 00:11:08,885 [INFO] Saved enriched: C:\Users\regicuco\PORTO PROJECT ANALYTICS ENGINEER\PROJECT 1\data\processed\orders_enriched.parquet (1083.4 KB)
+2026-08-31 00:11:08,885 [INFO] Saved categories: C:\Users\regicuco\PORTO PROJECT ANALYTICS ENGINEER\PROJECT 1\data\processed\orders_categories.parquet (348.2 KB)
+2026-08-31 00:11:08,885 [INFO]   [DONE] 4. Transformation ΓÇö Feature Engineering completed in 0.2s
+2026-08-31 00:11:08,885 [INFO] 
+============================================================
+2026-08-31 00:11:08,885 [INFO]   STEP: 5. Dimensional Model ΓÇö Star Schema
+2026-08-31 00:11:08,885 [INFO] ============================================================
+2026-08-31 00:11:08,885 [INFO] Building dimensional model...
+2026-08-31 00:11:08,885 [INFO]   Building dim_date...
+2026-08-31 00:11:08,897 [INFO]     dim_date: 24 records
+2026-08-31 00:11:08,897 [INFO]   Building dim_geography...
+2026-08-31 00:11:08,901 [INFO]     dim_geography: 424 records (34 provinces)
+2026-08-31 00:11:08,901 [INFO]   Building dim_product_category...
+2026-08-31 00:11:08,901 [INFO]     dim_product_category: 38 categories
+2026-08-31 00:11:08,901 [INFO]   Building dim_payment...
+2026-08-31 00:11:08,901 [INFO]     dim_payment: 12 payment methods
+2026-08-31 00:11:08,901 [INFO]   Building dim_shipping...
+2026-08-31 00:11:08,901 [INFO]     dim_shipping: 45 shipping options ΓåÆ 22 unique tier|courier combos
+2026-08-31 00:11:08,901 [INFO]   Building dim_status...
+2026-08-31 00:11:08,917 [INFO]     dim_status: 5 status values
+2026-08-31 00:11:08,917 [INFO]   Building fact_orders...
+2026-08-31 00:11:08,933 [INFO]     fact_orders: 20,848 rows, 54 columns
+2026-08-31 00:11:08,949 [INFO]   Saved dim_date: 24 rows (6.0 KB)
+2026-08-31 00:11:08,952 [INFO]   Saved dim_geography: 424 rows (15.7 KB)
+2026-08-31 00:11:08,952 [INFO]   Saved dim_product_category: 38 rows (3.7 KB)
+2026-08-31 00:11:08,952 [INFO]   Saved dim_payment: 12 rows (3.4 KB)
+2026-08-31 00:11:08,962 [INFO]   Saved dim_shipping: 45 rows (3.7 KB)
+2026-08-31 00:11:08,966 [INFO]   Saved dim_status: 5 rows (3.7 KB)
+2026-08-31 00:11:09,027 [INFO]   Saved fact_orders: 20,848 rows (757.0 KB)
+2026-08-31 00:11:09,027 [INFO]   [DONE] 5. Dimensional Model ΓÇö Star Schema completed in 0.1s
+2026-08-31 00:11:09,027 [INFO] 
+============================================================
+2026-08-31 00:11:09,027 [INFO]   STEP: 6. KPI Layer ΓÇö Business Metrics
+2026-08-31 00:11:09,027 [INFO] ============================================================
+2026-08-31 00:11:09,086 [INFO] KPI report saved: C:\Users\regicuco\PORTO PROJECT ANALYTICS ENGINEER\PROJECT 1\outputs\reports\kpi_summary.json
+2026-08-31 00:11:09,088 [INFO]   [DONE] 6. KPI Layer ΓÇö Business Metrics completed in 0.1s
+2026-08-31 00:11:09,088 [INFO] 
+============================================================
+2026-08-31 00:11:09,088 [INFO]   STEP: 7. Sales Analytics
+2026-08-31 00:11:09,088 [INFO] ============================================================
+2026-08-31 00:11:09,088 [INFO] Running sales analytics...
+2026-08-31 00:11:09,194 [INFO] Sales analytics complete.
+2026-08-31 00:11:09,200 [INFO]   Saved sales_monthly_trend: 24 rows
+2026-08-31 00:11:09,207 [INFO]   Saved sales_category_performance: 38 rows
+2026-08-31 00:11:09,213 [INFO]   Saved sales_payment_analysis: 12 rows
+2026-08-31 00:11:09,214 [INFO]   Saved sales_regional_performance: 34 rows
+2026-08-31 00:11:09,214 [INFO]   [DONE] 7. Sales Analytics completed in 0.1s
+2026-08-31 00:11:09,214 [INFO] 
+============================================================
+2026-08-31 00:11:09,214 [INFO]   STEP: 8. Operations Analytics
+2026-08-31 00:11:09,214 [INFO] ============================================================
+2026-08-31 00:11:09,214 [INFO] Running operations analytics...
+2026-08-31 00:11:09,432 [INFO] Operations analytics complete.
+2026-08-31 00:11:09,499 [INFO] Operations summary saved: C:\Users\regicuco\PORTO PROJECT ANALYTICS ENGINEER\PROJECT 1\outputs\reports\ops_summary.json
+2026-08-31 00:11:09,499 [INFO]   [DONE] 8. Operations Analytics completed in 0.3s
+2026-08-31 00:11:09,499 [INFO] 
+============================================================
+2026-08-31 00:11:09,499 [INFO]   STEP: 9. Geographic Analytics
+2026-08-31 00:11:09,499 [INFO] ============================================================
+2026-08-31 00:11:09,511 [INFO] Running geographic analytics...
+2026-08-31 00:11:09,715 [INFO] Geographic analytics complete.
+2026-08-31 00:11:09,715 [INFO]   Saved geo_province: 34 rows
+2026-08-31 00:11:09,734 [INFO]   Saved geo_city: 30 rows
+2026-08-31 00:11:09,747 [INFO]   Saved geo_region_group: 6 rows
+2026-08-31 00:11:09,751 [INFO]   Saved geo_monthly_trend_by_province: 192 rows
+2026-08-31 00:11:09,751 [INFO]   [DONE] 9. Geographic Analytics completed in 0.3s
+2026-08-31 00:11:09,752 [INFO] 
+============================================================
+2026-08-31 00:11:09,752 [INFO]   STEP: 10. Segmentation Analysis
+2026-08-31 00:11:09,752 [INFO] ============================================================
+2026-08-31 00:11:09,758 [INFO] Running segmentation analysis...
+2026-08-31 00:11:09,901 [INFO] Segmentation complete.
+2026-08-31 00:11:09,917 [INFO]   Saved seg_region_segments: 34 rows
+2026-08-31 00:11:09,919 [INFO]   Saved seg_category_segments: 38 rows
+2026-08-31 00:11:09,926 [INFO]   [DONE] 10. Segmentation Analysis completed in 0.2s
+2026-08-31 00:11:09,926 [INFO] 
+============================================================
+2026-08-31 00:11:09,926 [INFO]   STEP: 11. Forecasting
+2026-08-31 00:11:09,926 [INFO] ============================================================
+2026-08-31 00:11:09,935 [INFO] Starting forecasting pipeline...
+2026-08-31 00:11:09,949 [INFO]   Series length: 24 months (2023-12 ΓåÆ 2025-11)
+2026-08-31 00:11:09,949 [INFO]   Running expanding-window cross-validation...
+2026-08-31 00:11:09,953 [INFO]   CV results: {'naive': {'MAE': 152.67, 'RMSE': 173.55, 'sMAPE': 17.53}, 'moving_avg_3': {'MAE': 155.94, 'RMSE': 211.33, 'sMAPE': 17.05}, 'exp_smoothing': {'MAE': 179.52, 'RMSE': 212.5, 'sMAPE': 19.45}}
+2026-08-31 00:11:09,953 [INFO]   Fitting Holt-Winters...
+2026-08-31 00:11:31,173 [INFO]   Fitting ARIMA (grid search)...
+C:\Users\regicuco\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:679: EstimationWarning: Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+C:\Users\regicuco\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:679: EstimationWarning: Non-invertible starting MA parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+C:\Users\regicuco\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:679: EstimationWarning: Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+C:\Users\regicuco\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:679: EstimationWarning: Non-invertible starting MA parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+C:\Users\regicuco\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:679: EstimationWarning: Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+C:\Users\regicuco\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:679: EstimationWarning: Non-invertible starting MA parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+C:\Users\regicuco\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:679: EstimationWarning: Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+C:\Users\regicuco\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:679: EstimationWarning: Non-invertible starting MA parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+C:\Users\regicuco\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:679: EstimationWarning: Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+C:\Users\regicuco\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:679: EstimationWarning: Non-invertible starting MA parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+C:\Users\regicuco\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:737: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+C:\Users\regicuco\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:679: EstimationWarning: Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+C:\Users\regicuco\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:679: EstimationWarning: Non-invertible starting MA parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+C:\Users\regicuco\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:679: EstimationWarning: Non-stationary starting autoregressive parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+C:\Users\regicuco\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:679: EstimationWarning: Non-invertible starting MA parameters found. Using zeros as starting parameters.
+  start_params = self.start_params
+C:\Users\regicuco\AppData\Local\Programs\Python\Python312\Lib\site-packages\statsmodels\tsa\statespace\mlemodel.py:737: ConvergenceWarning: Maximum Likelihood optimization failed to converge. Check mle_retvals
+  mlefit = super().fit(
+2026-08-31 00:11:35,994 [INFO]   Best model: moving_avg_3 (sMAPE=17.1%)
+2026-08-31 00:11:35,994 [INFO] Forecasting complete.
+2026-08-31 00:11:36,012 [INFO]   Forecast for next 3 months:
+year_month_str  forecast_orders  ci_lower  ci_upper        model
+       2025-12             1156       965      1346 moving_avg_3
+       2026-01             1156       965      1346 moving_avg_3
+       2026-02             1156       965      1346 moving_avg_3
+2026-08-31 00:11:36,026 [INFO] Forecast saved: C:\Users\regicuco\PORTO PROJECT ANALYTICS ENGINEER\PROJECT 1\outputs\forecasts\forecast_results.json
+2026-08-31 00:11:36,026 [INFO]   [DONE] 11. Forecasting completed in 26.1s
+2026-08-31 00:11:36,026 [INFO] 
+============================================================
+2026-08-31 00:11:36,026 [INFO]   STEP: 12. Anomaly Detection
+2026-08-31 00:11:36,026 [INFO] ============================================================
+2026-08-31 00:11:36,040 [INFO] Running anomaly detection...
+2026-08-31 00:11:36,273 [INFO] Anomaly detection complete.
+2026-08-31 00:11:36,322 [INFO] Anomaly report saved: C:\Users\regicuco\PORTO PROJECT ANALYTICS ENGINEER\PROJECT 1\outputs\reports\anomaly_report.json
+2026-08-31 00:11:36,322 [INFO]   [DONE] 12. Anomaly Detection completed in 0.3s
+2026-08-31 00:11:36,322 [INFO] 
+============================================================
+2026-08-31 00:11:36,322 [INFO]   STEP: 13. Early Warning System
+2026-08-31 00:11:36,322 [INFO] ============================================================
+2026-08-31 00:11:36,322 [INFO] Running early warning system...
+2026-08-31 00:11:36,539 [INFO] Early warning complete: {'total_alerts': 4, 'critical': 1, 'warning': 3, 'watch': 0}
+2026-08-31 00:11:36,542 [INFO] Early warning report saved: C:\Users\regicuco\PORTO PROJECT ANALYTICS ENGINEER\PROJECT 1\outputs\reports\early_warning_alerts.json
+2026-08-31 00:11:36,542 [INFO]   [DONE] 13. Early Warning System completed in 0.2s
+2026-08-31 00:11:36,542 [INFO] 
+============================================================
+2026-08-31 00:11:36,542 [INFO]   STEP: 14. Decision Support
+2026-08-31 00:11:36,542 [INFO] ============================================================
+2026-08-31 00:11:36,542 [INFO] Running decision support engine...
+2026-08-31 00:11:36,640 [INFO] Generated 5 recommendations.
+2026-08-31 00:11:36,640 [INFO] Decision support complete.
+2026-08-31 00:11:36,642 [INFO] Recommendations saved: C:\Users\regicuco\PORTO PROJECT ANALYTICS ENGINEER\PROJECT 1\outputs\reports\recommendations.json
+2026-08-31 00:11:36,642 [INFO]   [DONE] 14. Decision Support completed in 0.1s
+2026-08-31 00:11:36,643 [INFO] 
+============================================================
+2026-08-31 00:11:36,643 [INFO]   PIPELINE COMPLETE
+2026-08-31 00:11:36,643 [INFO]   Total time: 29.2s
+2026-08-31 00:11:36,643 [INFO] ============================================================
+2026-08-31 00:11:36,643 [INFO] 
+  Total Orders    : 20,848
+2026-08-31 00:11:36,643 [INFO]   Cancel Rate     : 13.6%
+2026-08-31 00:11:36,643 [INFO]   Total Revenue   : Rp 1,051,466,307
+2026-08-31 00:11:36,643 [INFO]   Avg Order Value : Rp 58,646
+2026-08-31 00:11:36,643 [INFO] 
+  3-Month Forecast:
+2026-08-31 00:11:36,644 [INFO]     2025-12: 1,156 orders (CI: 965ΓÇô1,346)
+2026-08-31 00:11:36,644 [INFO]     2026-01: 1,156 orders (CI: 965ΓÇô1,346)
+2026-08-31 00:11:36,646 [INFO]     2026-02: 1,156 orders (CI: 965ΓÇô1,346)
+2026-08-31 00:11:36,646 [INFO] 
+  Early Warnings  : 4 alerts (1 Critical, 3 Warning, 0 Watch)
+2026-08-31 00:11:36,646 [INFO]   Recommendations : 5 (1 High, 3 Medium, 1 Low)
+2026-08-31 00:11:36,646 [INFO] 
+  Run 'streamlit run dashboard/app.py' to view the dashboard.
