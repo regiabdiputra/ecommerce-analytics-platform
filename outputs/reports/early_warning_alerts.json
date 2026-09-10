@@ -14,8 +14,8 @@
       "deviation_pct": 63.36,
       "severity": "Critical",
       "affected": "SULAWESI TENGAH",
-      "description": "SULAWESI TENGAH: cancellation rate 30.4% (national avg: 18.6%, 56 orders).",
-      "recommendation": "Investigate cancellation drivers in SULAWESI TENGAH. Check if COD proportion is high, logistics reliability, or buyer quality issues. Requires operational investigation.",
+      "description": "Sulawesi Tengah memiliki tingkat pembatalan 30,4% — jauh di atas rata-rata nasional 18,6%. Dari 56 pesanan yang masuk, hampir 1 dari 3 pesanan dibatalkan. Ini adalah sinyal kritis yang membutuhkan tindakan segera.",
+      "recommendation": "Lakukan investigasi mendalam penyebab pembatalan di Sulawesi Tengah. Periksa apakah mayoritas pesanan menggunakan COD (bayar di tempat) yang berisiko lebih tinggi. Tinjau performa kurir di wilayah ini — apakah ada masalah keterlambatan atau kegagalan pengiriman. Pertimbangkan untuk membatasi sementara pesanan COD di provinsi ini sambil menunggu hasil investigasi.",
       "timestamp": "2026-08-31T00:11:36.539997"
     },
     {
@@ -24,9 +24,9 @@
       "baseline_value": 14.42,
       "deviation_pct": -38.06,
       "severity": "Warning",
-      "affected": "All orders — 2025-11",
-      "description": "Cancellation rate in 2025-11 is 8.9% vs baseline 14.4%.",
-      "recommendation": "Investigate recent cancellation reasons. Check if COD-related or system-related cancellations increased. Review operational processes.",
+      "affected": "Semua Pesanan — November 2025",
+      "description": "Tingkat pembatalan bulan November 2025 tercatat hanya 8,9% — turun signifikan dari baseline normal 14,4%. Ini adalah anomali positif: pembatalan jauh lebih rendah dari biasanya. Perlu dikonfirmasi apakah ini perbaikan nyata yang berkelanjutan atau hanya fluktuasi sesaat.",
+      "recommendation": "Identifikasi faktor apa yang menyebabkan pembatalan turun drastis di November 2025 — apakah ada perubahan operasional, kebijakan pembayaran, atau profil pembeli yang berbeda. Jika ada perubahan positif yang bisa diidentifikasi, pertahankan dan replikasi ke bulan-bulan berikutnya.",
       "timestamp": "2026-08-31T00:11:36.339027"
     },
     {
@@ -36,8 +36,8 @@
       "deviation_pct": 49.7,
       "severity": "Warning",
       "affected": "KALIMANTAN TIMUR",
-      "description": "KALIMANTAN TIMUR: cancellation rate 27.8% (national avg: 18.6%, 133 orders).",
-      "recommendation": "Investigate cancellation drivers in KALIMANTAN TIMUR. Check if COD proportion is high, logistics reliability, or buyer quality issues. Requires operational investigation.",
+      "description": "Kalimantan Timur memiliki tingkat pembatalan 27,8% dari 133 pesanan — 49,7% di atas rata-rata nasional 18,6%. Volume pesanan di sini cukup besar sehingga dampaknya signifikan terhadap operasional dan biaya ongkir yang terbuang.",
+      "recommendation": "Prioritaskan investigasi di Kalimantan Timur karena volume pesanannya (133 pesanan) lebih besar dari Sulawesi Tengah. Periksa apakah masalah utama ada di keterlambatan pengiriman, tingginya COD, atau banyak pembeli yang mengubah pesanan setelah order. Pertimbangkan negosiasi dengan kurir untuk meningkatkan keandalan pengiriman di wilayah Kalimantan.",
       "timestamp": "2026-08-31T00:11:36.539997"
     },
     {
@@ -47,8 +47,8 @@
       "deviation_pct": 48.62,
       "severity": "Warning",
       "affected": "NUSA TENGGARA BARAT (NTB)",
-      "description": "NUSA TENGGARA BARAT (NTB): cancellation rate 27.6% (national avg: 18.6%, 105 orders).",
-      "recommendation": "Investigate cancellation drivers in NUSA TENGGARA BARAT (NTB). Check if COD proportion is high, logistics reliability, or buyer quality issues. Requires operational investigation.",
+      "description": "Nusa Tenggara Barat (NTB) memiliki tingkat pembatalan 27,6% dari 105 pesanan — 48,6% di atas rata-rata nasional 18,6%. Pola ini serupa dengan Kalimantan Timur, mengindikasikan kemungkinan masalah infrastruktur logistik di wilayah luar Jawa.",
+      "recommendation": "Tinjau performa pengiriman di NTB — apakah kurir yang beroperasi di sana memiliki tingkat keberhasilan pengiriman yang rendah. Bandingkan profil pembeli NTB dengan provinsi lain: apakah proporsi COD lebih tinggi, atau banyak pesanan dari kota kecil yang sulit dijangkau kurir. Pertimbangkan program edukasi pembeli tentang cara memesan dengan benar untuk mengurangi pembatalan akibat kesalahan alamat.",
       "timestamp": "2026-08-31T00:11:36.539997"
     }
   ]
