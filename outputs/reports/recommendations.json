@@ -6,49 +6,54 @@
   "low_priority": 1,
   "recommendations": [
     {
-      "title": "Address Elevated Cancellation Rate in SULAWESI TENGAH",
-      "observation": "SULAWESI TENGAH has a cancellation rate of 30.4% — significantly above the national average of 13.6%.",
-      "evidence": "9 provinces have cancellation rates ≥ 1.5x the national average. SULAWESI TENGAH: 56 orders, 30.4% cancellation. National avg: 13.6%.",
-      "implication": "High cancellation provinces waste shipping costs and operational resources. Root causes may include: high COD proportion, logistics reliability issues, or buyer-initiated order changes.",
-      "action": "(1) Investigate cancellation reason breakdown specifically in SULAWESI TENGAH. (2) Compare COD vs digital payment cancel rates within SULAWESI TENGAH. (3) Review courier performance and delivery success rates in the region. Note: causal factors require operational investigation.",
-      "priority": "High",
-      "category": "Operations"
+      "title": "Tangani Tingkat Pembatalan Tinggi di Sulawesi Tengah",
+      "observation": "Sulawesi Tengah memiliki tingkat pembatalan 30,4% — jauh di atas rata-rata nasional 13,6%.",
+      "evidence": "9 provinsi memiliki tingkat pembatalan 1,5x di atas rata-rata nasional. Sulawesi Tengah: 56 pesanan, batal 30,4%. Rata-rata nasional: 13,6%.",
+      "implication": "Provinsi dengan pembatalan tinggi membuang biaya ongkir dan sumber daya operasional. Kemungkinan penyebab: proporsi COD tinggi, masalah keandalan logistik, atau pembeli sering mengubah pesanan.",
+      "recommendation": "Investigasi penyebab pembatalan secara spesifik di Sulawesi Tengah. Bandingkan tingkat batal COD vs pembayaran digital di wilayah tersebut. Tinjau performa kurir dan tingkat keberhasilan pengiriman di provinsi ini.",
+      "expected_impact": "Menurunkan tingkat pembatalan Sulawesi Tengah dari 30,4% mendekati rata-rata nasional 13,6% dapat menghemat puluhan pesanan gagal per bulan dan mengurangi pemborosan biaya ongkir.",
+      "priority": "high",
+      "category": "Operasional"
     },
     {
-      "title": "Diversify Geographic Revenue Base",
-      "observation": "80.2% of all orders originate from Java, Bali, and Banten.",
-      "evidence": "Top province JAWA BARAT alone contributes 32.0% of orders. Top 3 provinces = 63.2% of total. Outside Java-Bali: 19.8% of orders.",
-      "implication": "High geographic concentration creates vulnerability — any disruption (logistics, competition, regional events) in Jawa Barat or Banten would materially impact overall business performance.",
-      "action": "(1) Identify high-potential provinces outside Java with low cancellation rates. (2) Target emerging markets (provinces showing volume growth but low penetration). (3) Evaluate whether shipping costs to outer provinces are competitively subsidized.",
-      "priority": "Medium",
-      "category": "Geography"
+      "title": "Diversifikasi Basis Pendapatan Geografis",
+      "observation": "80,2% dari seluruh pesanan berasal dari Jawa, Bali, dan Banten.",
+      "evidence": "Provinsi teratas Jawa Barat saja menyumbang 32,0% pesanan. Top 3 provinsi = 63,2% dari total. Di luar Jawa-Bali: hanya 19,8% pesanan.",
+      "implication": "Konsentrasi geografis tinggi menciptakan kerentanan — gangguan di Jawa Barat atau Banten akan berdampak besar pada kinerja bisnis secara keseluruhan.",
+      "recommendation": "Identifikasi provinsi berpotensi tinggi di luar Jawa dengan tingkat pembatalan rendah. Bidik pasar yang sedang tumbuh namun penetrasinya masih rendah. Evaluasi apakah biaya ongkir ke provinsi luar Jawa sudah disubsidi secara kompetitif.",
+      "expected_impact": "Mengurangi ketergantungan pada Jawa dari 80% menjadi 70% dalam 12 bulan ke depan akan memperkuat ketahanan bisnis terhadap gangguan regional.",
+      "priority": "medium",
+      "category": "Geografi"
     },
     {
-      "title": "Assess Shipping Subsidy Sustainability",
-      "observation": "69.8% of orders had zero buyer shipping cost. Platform subsidizes 68.9% of shipping costs on average.",
-      "evidence": "Median buyer shipping payment = Rp 0 (free shipping). Median estimated platform subsidy = Rp 9,500 per order. Total orders: 20,848.",
-      "implication": "Heavy shipping subsidies support order volume but represent a significant platform cost. As volume grows, subsidy cost scales proportionally. Business sustainability depends on whether subsidy is offset by GMV growth.",
-      "action": "(1) Monitor subsidy cost trend monthly. (2) Identify order segments where buyers can absorb partial shipping cost. (3) Evaluate whether heavier orders (high weight_kg) receive disproportionate subsidy.",
-      "priority": "Medium",
-      "category": "Commercial"
+      "title": "Evaluasi Keberlanjutan Subsidi Ongkir",
+      "observation": "69,8% pesanan memiliki biaya ongkir nol untuk pembeli. Platform menanggung rata-rata 68,9% biaya ongkir.",
+      "evidence": "Median pembayaran ongkir pembeli = Rp 0 (gratis). Median estimasi subsidi platform = Rp 9.500 per pesanan. Total pesanan: 20.848.",
+      "implication": "Subsidi ongkir besar mendukung volume pesanan tapi merupakan biaya platform yang signifikan. Seiring pertumbuhan volume, biaya subsidi ikut membesar secara proporsional. Keberlanjutan bisnis bergantung pada apakah subsidi ini diimbangi pertumbuhan pendapatan.",
+      "recommendation": "Pantau tren biaya subsidi setiap bulan. Identifikasi segmen pesanan di mana pembeli mampu menanggung sebagian ongkir. Evaluasi apakah pesanan berat (berat tinggi) menerima subsidi yang tidak proporsional.",
+      "expected_impact": "Mengurangi subsidi ongkir sebesar 10% saja berpotensi menghemat Rp 38 juta per tahun — tanpa harus mengorbankan volume secara signifikan jika dilakukan secara bertahap.",
+      "priority": "medium",
+      "category": "Komersial"
     },
     {
-      "title": "Capitalize on Positive Growth Momentum",
-      "observation": "Order volume shows positive growth: +49.2% in recent 3 months vs prior 3 months.",
-      "evidence": "Recent 3-month avg: 1156 orders/month. Prior 3-month avg: 774 orders/month.",
-      "implication": "Positive trend provides opportunity to consolidate gains through operational readiness and targeted expansion.",
-      "action": "(1) Ensure logistics and fulfillment capacity matches growing order volume. (2) Identify which categories/regions are driving growth for targeted investment. (3) Monitor cancellation rate — ensure growth doesn't increase operational strain.",
-      "priority": "Medium",
-      "category": "Sales"
+      "title": "Manfaatkan Momentum Pertumbuhan Positif",
+      "observation": "Volume pesanan menunjukkan pertumbuhan positif: +49,2% dalam 3 bulan terakhir dibanding 3 bulan sebelumnya.",
+      "evidence": "Rata-rata 3 bulan terakhir: 1.156 pesanan/bulan. Rata-rata 3 bulan sebelumnya: 774 pesanan/bulan.",
+      "implication": "Tren positif ini membuka peluang untuk mengonsolidasi pertumbuhan melalui kesiapan operasional dan ekspansi yang terarah.",
+      "recommendation": "Pastikan kapasitas logistik dan pemenuhan pesanan siap menghadapi volume yang terus tumbuh. Identifikasi kategori dan wilayah yang mendorong pertumbuhan untuk investasi yang lebih terarah. Pantau tingkat pembatalan agar pertumbuhan tidak menambah beban operasional.",
+      "expected_impact": "Mempertahankan momentum pertumbuhan +49% dapat mendorong total pesanan menembus 15.000 pesanan per kuartal dalam 6 bulan ke depan.",
+      "priority": "medium",
+      "category": "Penjualan"
     },
     {
-      "title": "Evaluate Discount Strategy Effectiveness",
-      "observation": "Only 0.6% of orders have any discount applied.",
-      "evidence": "99.4% of orders have Total Diskon = 0. Discount analysis shows minimal commercial discount activity in the dataset.",
-      "implication": "Either discount programs are not being utilized, or buyers are purchasing at full price. This limits the ability to use price promotions as a growth lever. Subsidy may be delivered through shipping (not product discount).",
-      "action": "(1) Clarify whether product discounts are tracked separately from shipping subsidies. (2) If discount programs exist, investigate why uptake is low. (3) Consider targeted discount campaigns for high-cancellation segments to improve conversion.",
-      "priority": "Low",
-      "category": "Commercial"
+      "title": "Evaluasi Efektivitas Strategi Diskon",
+      "observation": "Hanya 0,6% pesanan yang mendapatkan diskon produk.",
+      "evidence": "99,4% pesanan memiliki Total Diskon = 0. Analisis diskon menunjukkan aktivitas diskon komersial sangat minim dalam dataset.",
+      "implication": "Program diskon tidak dimanfaatkan atau pembeli membeli dengan harga penuh. Ini membatasi kemampuan platform menggunakan promosi harga sebagai pendorong pertumbuhan. Subsidi mungkin disalurkan melalui ongkir, bukan diskon produk.",
+      "recommendation": "Klarifikasi apakah diskon produk dicatat terpisah dari subsidi ongkir. Jika program diskon ada, selidiki mengapa pemanfaatannya rendah. Pertimbangkan kampanye diskon bertarget untuk segmen dengan pembatalan tinggi guna meningkatkan konversi.",
+      "expected_impact": "Kampanye diskon bertarget pada kategori dengan batal tinggi (seperti Rak Serbaguna 30%) berpotensi menurunkan tingkat batal sekaligus meningkatkan volume penjualan kategori tersebut.",
+      "priority": "low",
+      "category": "Komersial"
     }
   ]
 }
